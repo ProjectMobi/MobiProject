@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="template">
+<head>
+    <meta charset="utf-8" />
+    <title>MobiPhone</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div>
+        <button type="submit" class="btn btn-primary">Add new Client</button>
+
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Consultation d'un Client</div>
+            <div class="panel-body">
+                <form th:action="@{/consulterClient}" method="get">
+                    <div>
+                        <label>Cin Client:</label> <input type="text" name="cin" th:value="${cin}"/>
+                        <button type="submit" class="btn btn-primary">Ok</button>
+                    </div>
+                </form>
+                <div class="text-danger" th:if="${exception}"
+                     th:text="${exception.message}"></div>
+                </div>
+            </div>
+        <div class="panel panel-primary" th:if="${client}">
+            <div class="panel-heading">Informations sur le client</div>
+            <div class="panel-body">
+
+                <div>
+                    <label>Cin:</label> <label th:text="${client.cin}"></label>
+                </div>
+                <div>
+                    <label>Nom:</label> <label th:text="${client.nom}"></label>
+                </div>
+                <div>
+                    <label>Solde:</label> <label th:text="${client.prenom}"></label>
+                </div>
+                <div>
+                    <label>Date Création:</label> <label
+                        th:text="${client.adresse}"></label>
+                </div>
+                <div>
+                    <label>Type du compte:</label> <label
+                        th:text="${client.email}"></label>
+                </div>
+
+            </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>
