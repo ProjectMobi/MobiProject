@@ -1,6 +1,7 @@
 package com.walid.mobi.metier;
 
 import com.walid.mobi.entities.Client;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 

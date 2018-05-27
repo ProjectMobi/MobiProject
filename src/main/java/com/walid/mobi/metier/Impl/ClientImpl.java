@@ -4,6 +4,8 @@ import com.walid.mobi.dao.ClientRepository;
 import com.walid.mobi.entities.Client;
 import com.walid.mobi.metier.IClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,14 +37,20 @@ public class ClientImpl implements IClient {
     }
 
     @Override
+
     public Client findById(Long cin){
         return clientRepository.findOne(cin);
     }
+
     @Override
+
     public List<Client> findAll(){
-        return clientRepository.findAll();
+        List<Client> clients= clientRepository.findAll();
+        return clients;
     }
+
     @Override
+
     public Client delete(Long idCl) {
         Client deletedClient = clientRepository.findOne(idCl);
         if (deletedClient == null)
@@ -52,5 +60,7 @@ public class ClientImpl implements IClient {
         return deletedClient;
 
     }
+
+
 
 }

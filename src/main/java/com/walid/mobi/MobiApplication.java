@@ -33,7 +33,7 @@ public class MobiApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... arg0) throws Exception {
-		clientRepository.save(new Client(112L,"charfi","benmed","hbbjk","edsf"));
+		//clientRepository.save(new Client(112L,"charfi","benmed","hbbjk","edsf"));
 		
 	}
 }
