@@ -18,6 +18,12 @@ public class ArticleImpl implements IArticle {
     private ArticleRepository articleRepository;
 
     @Override
+    public Article consulterArticle(Long idArt) {
+        Article article = articleRepository.findOne(idArt);
+        if(article == null) throw new RuntimeException("Article introuvable");
+        return article;
+    }
+    @Override
     public Article create(Article article){
         Article newArticle= article;
         return articleRepository.save(newArticle);

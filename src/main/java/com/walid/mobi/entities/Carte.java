@@ -65,6 +65,10 @@ public class Carte extends Article {
 		this.type = type;
 		this.operateur = operateur;
 	}
+
+	public Carte() {
+	}
+
 	@Override
 	public String toString() {
 		return "Carte [dureeValidite=" + dureeValidite + ", type=" + type + ", operateur="

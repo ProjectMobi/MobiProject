@@ -19,8 +19,9 @@ public class ClientController {
     @RequestMapping("/clients")
     public String index(){
 
-        return "clients";
+        return "listClients";
     }
+
     @RequestMapping("/listClients")
     public String listClients(Model model){
 
@@ -34,6 +35,7 @@ public class ClientController {
         model.addAttribute("clients", clientimp.findAll());
         return "clients";
     }
+
     @RequestMapping(value={"/edit","/edit/{cin}"}, method = RequestMethod.GET)
     public String editform(Model model, @PathVariable(required = false, name = "cin") Long cin) {
         if (null != cin) {
@@ -43,12 +45,14 @@ public class ClientController {
         }
         return "editClient";
     }
+
     @RequestMapping(value="/edit", method = RequestMethod.POST)
     public String edit(Model model, Client client) {
         clientimp.create(client);
         model.addAttribute("clients", clientimp.findAll());
         return "clients";
     }
+
     @RequestMapping("/consulterClient")
     public String consulter(Model model, Long cin){
         try {
@@ -59,6 +63,12 @@ public class ClientController {
         }
 
         return "clients";
+    }
+
+    @RequestMapping(value="/formCreate", method= RequestMethod.GET)
+    public String formClient(Model model){
+        model.addAttribute("client",new Client());
+        return "addClient";
     }
 
     @RequestMapping(value="/create", method= RequestMethod.POST)

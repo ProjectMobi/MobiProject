@@ -11,7 +11,7 @@
 <div layout:fragment="content">
     <div class="container">
 
-        <h1>Notes</h1>
+        <h1>Modifier Client</h1>
 
         <form class="form-group" th:object="${clients}" action="/edit" th:action="@{/edit}" method="post">
             <input th:type="hidden" name="id" th:field="${clients.cin}" />
@@ -37,7 +37,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Save</button>
-            <a href="#" th:href="@{/}" class="btn btn-danger" role="button">Cancel</a>
+            <a href="#" th:href="@{/listClient}" class="btn btn-danger" role="button">Cancel</a>
         </form>
 
     </div></div>

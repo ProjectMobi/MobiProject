@@ -10,74 +10,47 @@
 </head>
 <body>
 <div layout:fragment="content">
-    <a href="/create/1" th:href="@{/create}">Create</a>
+    <a href="/create/1" th:href="@{/formCreate}">Create</a>
 
-    <div class="col-md-6">
-        <div class="panel panel-primary">
-            <div class="panel-heading">Consultation d'un Client</div>
-            <div class="panel-body">
-                <form th:action="@{/consulterClient}" method="get">
-                    <div>
-                        <label>Cin Client:</label> <input type="text" name="cin" th:value="${cin}"/>
-                        <button type="submit" class="btn btn-primary">Ok</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="panel panel-primary" th:if="${client}">
-            <div class="panel-heading">Informations sur le client</div>
-            <div class="panel-body">
+   <div>
+       <!-- <div class="panel panel-primary">
+          <div class="panel-heading">Consultation d'un Client</div>
+          <div class="panel-body">
+              <form th:action="@{/consulterClient}" method="get">
+                  <div>
+                      <label>Cin Client:</label>
+                      <input type="text" name="cin" th:value="${cin}"/>
+                      <button type="submit" class="btn btn-primary">Ok</button>
+                  </div>
+              </form>
+          </div>
+      </div>-->
+         <div class="panel panel-primary" th:if="${client}">
+             <div class="panel-heading">Informations sur le client</div>
+             <div class="panel-body">
 
-                <div>
-                    <label>Cin :</label> <label th:text="${client.cin}"></label>
-                </div>
-                <div>
-                    <label>Nom :</label> <label th:text="${client.nom}"></label>
-                </div>
-                <div>
-                    <label>prenom :</label> <label th:text="${client.prenom}"></label>
-                </div>
-                <div>
-                    <label>adresse :</label> <label
-                        th:text="${client.adresse}"></label>
-                </div>
-                <div>
-                    <label>email :</label> <label
-                        th:text="${client.email}"></label>
-                </div>
+                 <div>
+                     <label>Cin :</label> <label th:text="${client.cin}"></label>
+                 </div>
+                 <div>
+                     <label>Nom :</label> <label th:text="${client.nom}"></label>
+                 </div>
+                 <div>
+                     <label>prenom :</label> <label th:text="${client.prenom}"></label>
+                 </div>
+                 <div>
+                     <label>adresse :</label> <label
+                         th:text="${client.adresse}"></label>
+                 </div>
+                 <div>
+                     <label>email :</label> <label
+                         th:text="${client.email}"></label>
+                 </div>
 
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="panel panel-primary" >
-            <div class="panel-heading">Opération sur le compte</div>
-            <div class="panel-body">
-                <form th:action="@{/create}" method="post">
+             </div>
+         </div>
+     </div>
 
-                    <div id="cin">
-                        <label>Cin :</label> <input type="number" name="cin" />
-                    </div>
-                    <div id="client">
-                        <label>Nom :</label> <input type="text" name="nom" />
-                    </div>
-                    <div>
-                        <label>Prenom :</label> <input type="text" name="prenom" />
-                    </div>
-                    <div>
-                        <label>Address :</label> <input type="text" name="adress" />
-                    </div>
-                    <div>
-                        <label>Mail :</label> <input type="text" name="email" />
-                    </div>
-                    <div class="text-danger"
-                         th:text="${#httpServletRequest.getParameter('error')}"></div>
-
-                    <button type="submit" class="btn btn-primary">Save</button>
-                </form>
-            </div>
-        </div>
-    </div>
     <div class="col-md-6">
         <div class="panel panel-primary" th:if="${clients}">
             <div class="panel-heading">Liste des Clients</div>

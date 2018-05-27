@@ -36,6 +36,10 @@ public class TelphoneMobile extends Article {
 		this.model = model;
 		this.refrence = refrence;
 	}
+
+	public TelphoneMobile() {
+	}
+
 	@Override
 	public String toString() {
 		return "TelphoneMobile [model=" + model + ", refrence=" + refrence + "]";

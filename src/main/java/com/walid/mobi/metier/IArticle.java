@@ -11,5 +11,7 @@ public interface IArticle {
     public Article  create(Article article);
     public Article update(Article article);
     public Article delete(Long idArt);
+    public Article consulterArticle(Long cin);
+
 
 }

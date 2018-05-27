@@ -62,6 +62,10 @@ public class Cle extends Article {
 		this.capaciteMaxTelechargement = capaciteMaxTelechargement;
 		this.operateur = operateur;
 	}
+
+	public Cle() {
+	}
+
 	@Override
 	public String toString() {
 		return "Cle [numeroSerie=" + numeroSerie + ", debitConnexion=" + debitConnexion + ", capaciteMaxTelechargement="

@@ -46,6 +46,9 @@ public class Ligne_Telep extends Article {
 		this.operateur = operateur;
 	}
 
+	public Ligne_Telep() {
+	}
+
 	@Override
 	public String toString() {
 		return "Ligne_Telep [numeroTelephone=" + numeroTelephone + ", operateur=" + operateur + "]";
