@@ -56,7 +56,7 @@ public class Cle extends Article {
 	
 	public Cle(double prix, Integer quantiteSeuil, String numeroSerie, String debitConnexion,
 			String capaciteMaxTelechargement, Operateur operateur) {
-		super(prix, quantiteSeuil);
+		super( quantiteSeuil,prix);
 		this.numeroSerie = numeroSerie;
 		this.debitConnexion = debitConnexion;
 		this.capaciteMaxTelechargement = capaciteMaxTelechargement;

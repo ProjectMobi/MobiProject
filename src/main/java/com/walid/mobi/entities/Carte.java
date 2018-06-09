@@ -59,7 +59,7 @@ public class Carte extends Article {
 	
 	public Carte(double prix, Integer quantiteSeuil, Integer dureeValidite, Integer quantite, Type_Carte type,
 			Operateur operateur) {
-		super(prix, quantiteSeuil);
+		super( quantiteSeuil,prix);
 		this.dureeValidite = dureeValidite;
 		this.quantite = quantite;
 		this.type = type;

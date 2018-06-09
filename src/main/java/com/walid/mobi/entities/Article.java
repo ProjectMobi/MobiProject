@@ -59,12 +59,37 @@ public class Article implements Serializable {
 	public void setPrix(double prix) {
 		this.prix = prix;
 	}
-	
-	public Article(double prix, Integer quantiteSeuil) {
-		super();
+
+	public Commande getCommande() {
+		return commande;
+	}
+
+	public void setCommande(Commande commande) {
+		this.commande = commande;
+	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
+	public Article(Integer quantiteSeuil, double prix, Commande commande, Client client) {
+		this.quantiteSeuil = quantiteSeuil;
+		this.prix = prix;
+		this.commande = commande;
+		this.client = client;
+	}
+
+
+	public Article(Integer quantiteSeuil, double prix) {
 		this.quantiteSeuil = quantiteSeuil;
 		this.prix = prix;
 	}
+
+
 	public Article() {
 		super();
 		// TODO Auto-generated constructor stub

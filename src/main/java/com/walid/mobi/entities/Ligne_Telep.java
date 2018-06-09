@@ -41,7 +41,7 @@ public class Ligne_Telep extends Article {
 	
 
 	public Ligne_Telep(double prix, Integer quantiteSeuil, long numeroTelephone, Operateur operateur) {
-		super(prix, quantiteSeuil);
+		super( quantiteSeuil,prix);
 		this.numeroTelephone = numeroTelephone;
 		this.operateur = operateur;
 	}
